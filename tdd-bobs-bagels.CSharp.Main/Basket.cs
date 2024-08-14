@@ -14,5 +14,10 @@ namespace tdd_bobs_bagels.CSharp.Main
             basket.Add(bagel);
             return true;
         }
+
+        public bool Remove()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
