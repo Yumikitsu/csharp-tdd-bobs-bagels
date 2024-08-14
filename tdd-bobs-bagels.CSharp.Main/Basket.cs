@@ -42,9 +42,9 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool SetCapacity(int size)
         {
-            if (basket.Count < size)
+            if (basket.Count <= size)
             {
-                basket.Capacity = size;
+                capacity = size;
                 return true;
             }
             return false;
@@ -52,7 +52,12 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool Remove(string bagel)
         {
-            throw new NotImplementedException();
+            if(basket.Contains(bagel))
+            {
+                basket.Remove(bagel);
+                return true;
+            }
+            return false;
         }
     }
 }
