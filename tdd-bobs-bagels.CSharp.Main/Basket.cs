@@ -12,6 +12,10 @@ namespace tdd_bobs_bagels.CSharp.Main
         int capacity = 1;
         public bool Add(string bagel)
         {
+            if(IsFull())
+            {
+                return false;
+            }
             basket.Add(bagel);
             return true;
         }
@@ -21,6 +25,15 @@ namespace tdd_bobs_bagels.CSharp.Main
             if (basket.Count > 0)
             {
                 basket.RemoveAt(0);
+                return true;
+            }
+            return false;
+        }
+
+        public bool IsFull()
+        {
+            if(basket.Count == capacity)
+            {
                 return true;
             }
             return false;
