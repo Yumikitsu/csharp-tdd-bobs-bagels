@@ -38,5 +38,10 @@ namespace tdd_bobs_bagels.CSharp.Main
             }
             return false;
         }
+
+        public bool SetCapacity(int size)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
