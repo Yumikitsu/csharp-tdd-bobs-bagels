@@ -9,6 +9,7 @@ namespace tdd_bobs_bagels.CSharp.Main
     public class Basket
     {
         List<string> basket = new List<string>();
+        int capacity = 1;
         public bool Add(string bagel)
         {
             basket.Add(bagel);

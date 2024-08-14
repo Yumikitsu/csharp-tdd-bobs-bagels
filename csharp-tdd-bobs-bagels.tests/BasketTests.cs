@@ -35,4 +35,19 @@ public class Tests
         Assert.That(result, Is.EqualTo(expected));
         Assert.That(result2, Is.EqualTo(expected2));
     }
+
+    [TestCase("Chocolate Bagel", "Frosted Bagel")]
+    public void OverfillTest(string bagel1, string bagel2)
+    {
+        //arrange
+        Basket basket = new Basket();
+        bool expected = false;
+        basket.Add(bagel1);
+
+        //act
+        bool result = basket.Add(bagel2);
+
+        //assert
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
