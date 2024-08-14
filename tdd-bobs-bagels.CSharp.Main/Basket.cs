@@ -17,7 +17,12 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool Remove()
         {
-            throw new NotImplementedException();
+            if (basket.Count > 0)
+            {
+                basket.RemoveAt(0);
+                return true;
+            }
+            return false;
         }
     }
 }
