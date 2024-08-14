@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32.SafeHandles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,7 +42,12 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool SetCapacity(int size)
         {
-            throw new NotImplementedException();
+            if (basket.Count < size)
+            {
+                basket.Capacity = size;
+                return true;
+            }
+            return false;
         }
     }
 }
