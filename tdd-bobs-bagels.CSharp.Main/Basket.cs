@@ -8,9 +8,11 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
     {
+        List<string> basket = new List<string>();
         public bool Add(string bagel)
         {
-            throw new NotImplementedException();
+            basket.Add(bagel);
+            return true;
         }
     }
 }
