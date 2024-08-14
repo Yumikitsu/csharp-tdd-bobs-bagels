@@ -74,4 +74,31 @@ public class Tests
         Assert.That(resultAllowedIncrease, Is.EqualTo(expectedAllowedIncrease));
         Assert.That(resultAllowedDecrease, Is.EqualTo(expectedAllowedDecrease));
     }
+
+    [TestCase("Strawberry Bagel", "Vanilla Bagel")]
+    public void RemoveSpecificBagelTest(string bagel1, string bagel2)
+    {
+        //arrange
+        Basket basket = new Basket();
+        basket.SetCapacity(3);
+        basket.Add(bagel1); //First Strawberry
+        basket.Add(bagel1); //Second Strawberry
+        basket.Add(bagel2); //First Vanilla
+        bool expectedRemoveVanilla = true;
+        bool expectedRemoveVanillaAgain = false;
+        bool expectedRemoveStrawberry = true;
+        bool expectedRemoveStrawberryAgain = true;
+
+        //act
+        bool resultRemoveVanilla = basket.Remove(bagel2);
+        bool resultRemoveVanillaAgain = basket.Remove(bagel2);
+        bool resultRemoveStrawberry = basket.Remove(bagel1);
+        bool resultRemoveStrawberryAgain = basket.Remove(bagel1);
+
+        //assert
+        Assert.That(resultRemoveVanilla, Is.EqualTo(expectedRemoveVanilla));
+        Assert.That(resultRemoveVanillaAgain, Is.EqualTo(expectedRemoveVanillaAgain));
+        Assert.That(resultRemoveStrawberry, Is.EqualTo(expectedRemoveStrawberry));
+        Assert.That(resultRemoveStrawberryAgain, Is.EqualTo(expectedRemoveStrawberryAgain));
+    }
 }
